@@ -25,7 +25,6 @@ class ClientDashboardController extends Controller
             ->when($request->filled('specialty'), fn ($query) => $query->where('specialty', $request->string('specialty')->toString()))
             ->when($request->filled('location'), fn ($query) => $query->where('location', $request->string('location')->toString()))
             ->when($request->boolean('available'), fn ($query) => $query->where('is_available', true))
-            ->when($request->filled('minimum_rating'), fn ($query) => $query->having('ratings_avg_rating', '>=', (float) $request->input('minimum_rating')))
             ->orderByDesc('ratings_avg_rating')
             ->paginate(4)
             ->withQueryString();

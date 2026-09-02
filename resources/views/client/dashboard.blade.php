@@ -113,7 +113,7 @@
                             <div class="flex flex-col gap-2 text-sm md:w-44">
                                 @if ($technician->ratings_count > 0)
                                     <strong class="text-lg">{{ number_format((float) $technician->ratings_avg_rating, 1) }} <span class="text-amber-500">★</span></strong>
-                                    <span class="text-xs text-slate-500">({{ $technician->ratings_count }} opiniones)</span>
+                                    <span class="text-xs text-slate-500">({{ $technician->ratings_count }} {{ $technician->ratings_count === 1 ? 'opinión' : 'opiniones' }})</span>
                                 @else
                                     <span class="text-sm text-slate-500">Sin opiniones todavía</span>
                                 @endif

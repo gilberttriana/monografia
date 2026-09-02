@@ -4,7 +4,7 @@ use App\Models\Technician;
 use App\Models\TechnicianRating;
 use App\Models\User;
 
-test('only authenticated clients can view the contractor search', function () {
+test('non-client users cannot view the contractor search', function () {
     $user = User::factory()->create(['role' => 'member']);
 
     $this->actingAs($user)->get(route('client.dashboard'))->assertForbidden();
@@ -63,7 +63,7 @@ test('clients see technicians and ratings from the database', function () {
     $response->assertOk()
         ->assertSee('Juan Perez')
         ->assertSee('5.0')
-        ->assertSee('1 opiniones');
+        ->assertSee('1 opinión');
 });
 
 test('clients without technicians see an empty state', function () {

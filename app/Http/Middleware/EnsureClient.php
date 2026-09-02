@@ -10,7 +10,7 @@ class EnsureClient
 {
     public function handle(Request $request, Closure $next): Response
     {
-        abort_unless($request->user()?->role === 'client', 403);
+        abort_unless(strtolower(trim((string) $request->user()?->role)) === 'client', 403);
 
         return $next($request);
     }
