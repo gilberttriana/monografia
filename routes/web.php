@@ -5,9 +5,17 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teams\TeamInvitationController;
 use App\Http\Middleware\EnsureClient;
 use App\Http\Middleware\EnsureTeamMembership;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
-Route::inertia('/', 'welcome')->name('home');
+Route::get('/', function (Request $request) {
+    if (strtolower(trim((string) $request->user()?->role)) === 'client') {
+        return redirect()->route('client.dashboard');
+    }
+
+    return Inertia::render('welcome');
+})->name('home');
 
 Route::get('client/dashboard', ClientDashboardController::class)
     ->middleware(['auth', EnsureClient::class])
