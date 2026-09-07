@@ -27,9 +27,9 @@
                     </nav>
 
                     <div class="hidden items-center gap-3 sm:flex">
-                        <a href="{{ route('login.access') }}" class="rounded-xl border border-[#2563eb] px-5 py-2 text-sm font-semibold text-[#2563eb] hover:bg-[#f0f6ff]">Iniciar sesión</a>
+                        <a href="{{ route('login') }}" class="rounded-xl border border-[#2563eb] px-5 py-2 text-sm font-semibold text-[#2563eb] hover:bg-[#f0f6ff]">Iniciar sesión</a>
                         @if (Route::has('register'))
-                            <a href="{{ route('register.access') }}" class="rounded-xl bg-[#2563eb] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_-16px_rgba(37,99,235,0.9)] hover:bg-[#1d4ed8]">Registrarse</a>
+                            <a href="/register" class="rounded-xl bg-[#2563eb] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_-16px_rgba(37,99,235,0.9)] hover:bg-[#1d4ed8]">Registrarse</a>
                         @endif
                     </div>
                 </div>
@@ -57,11 +57,11 @@
                             </p>
                             <div class="flex flex-wrap gap-4">
                                 @if (Route::has('register'))
-                                    <a href="{{ route('register.access') }}" class="inline-flex items-center gap-2 rounded-xl bg-[#2563eb] px-7 py-3 text-base font-semibold text-white shadow-[0_20px_30px_-24px_rgba(37,99,235,1)] hover:bg-[#1d4ed8]">
+                                    <a href="/register" class="inline-flex items-center gap-2 rounded-xl bg-[#2563eb] px-7 py-3 text-base font-semibold text-white shadow-[0_20px_30px_-24px_rgba(37,99,235,1)] hover:bg-[#1d4ed8]">
                                         Registrarse
                                     </a>
                                 @endif
-                                <a href="{{ route('login.access') }}" class="inline-flex items-center gap-2 rounded-xl border border-[#2563eb] px-7 py-3 text-base font-semibold text-[#2563eb] hover:bg-[#f0f6ff]">
+                                <a href="{{ route('login') }}" class="inline-flex items-center gap-2 rounded-xl border border-[#2563eb] px-7 py-3 text-base font-semibold text-[#2563eb] hover:bg-[#f0f6ff]">
                                     Iniciar sesión
                                 </a>
                             </div>

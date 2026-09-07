@@ -134,7 +134,7 @@
                     <p class="mt-6 text-center text-sm text-[#4f6389]">
                         ¿No tienes una cuenta?
                         <a
-                            href="{{ route('register', $teamInvitation ? ['invitation' => $teamInvitation['code']] : []) }}"
+                            href="/register"
                             class="font-bold text-[#2563eb] hover:text-[#1d4ed8]"
                         >
                             Registrarse
